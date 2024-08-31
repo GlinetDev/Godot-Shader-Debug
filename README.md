@@ -28,5 +28,5 @@ debug_finish(color, dbg);
 - Pass your color to the finisher before applying
 
 
-![DebugScreen1](./DebugScreen1.png)
-![DebugScreen2](./DebugScreen2.gif)
+![DebugScreen1](DebugScreen1.png)
+![DebugScreen2](DebugScreen2.gif)
