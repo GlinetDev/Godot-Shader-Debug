@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8wv05mppchvc"]
+
+[ext_resource type="Shader" path="res://shader_sky_debug.gdshader" id="1_hncjt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w4fdj"]
+shader = ExtResource("1_hncjt")
+shader_parameter/dbg_text_scale = 4.0
+shader_parameter/dbg_text_offset = 0.08
+shader_parameter/dbg_alpha = 0.3
+shader_parameter/dbg_size_x = 0.45
+shader_parameter/dbg_size_y = 0.7
+shader_parameter/dbg_pos_x = 0.5
+shader_parameter/dbg_pos_y = 0.5
+shader_parameter/dbg_fix_floats = false
+
+[sub_resource type="Sky" id="Sky_swu5v"]
+sky_material = SubResource("ShaderMaterial_w4fdj")
+
+[sub_resource type="Environment" id="Environment_03fk7"]
+background_mode = 2
+sky = SubResource("Sky_swu5v")
+
+[node name="SkyShader" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_03fk7")

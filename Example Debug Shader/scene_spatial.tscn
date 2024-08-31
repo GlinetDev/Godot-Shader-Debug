@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://caritoa73yhk5"]
+
+[ext_resource type="Shader" path="res://shader_spatial_debug.gdshader" id="1_vyfgl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_86mx4"]
+
+[sub_resource type="Sky" id="Sky_wdg2k"]
+sky_material = SubResource("ProceduralSkyMaterial_86mx4")
+
+[sub_resource type="Environment" id="Environment_3vgt3"]
+background_mode = 2
+sky = SubResource("Sky_wdg2k")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wf431"]
+render_priority = 0
+shader = ExtResource("1_vyfgl")
+shader_parameter/dbg_text_scale = 4.0
+shader_parameter/dbg_text_offset = 0.08
+shader_parameter/dbg_alpha = 0.8
+shader_parameter/dbg_size_x = 0.8
+shader_parameter/dbg_size_y = 0.8
+shader_parameter/dbg_pos_x = 0.5
+shader_parameter/dbg_pos_y = 0.5
+shader_parameter/dbg_fix_floats = false
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_f1pj3"]
+material = SubResource("ShaderMaterial_wf431")
+size = Vector2(4, 4)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oxlk4"]
+render_priority = 0
+shader = ExtResource("1_vyfgl")
+shader_parameter/dbg_text_scale = 4.0
+shader_parameter/dbg_text_offset = 0.08
+shader_parameter/dbg_alpha = 0.8
+shader_parameter/dbg_size_x = 0.25
+shader_parameter/dbg_size_y = 0.35
+shader_parameter/dbg_pos_x = 0.15
+shader_parameter/dbg_pos_y = 0.05
+shader_parameter/dbg_fix_floats = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kur8f"]
+material = SubResource("ShaderMaterial_oxlk4")
+top_radius = 1.0
+bottom_radius = 1.0
+
+[node name="SpatialShader" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3vgt3")
+
+[node name="Plane" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("PlaneMesh_f1pj3")
+
+[node name="Cylinder" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1, -2)
+mesh = SubResource("CylinderMesh_kur8f")
