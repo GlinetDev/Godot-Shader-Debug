@@ -1,7 +1,4 @@
 ## Godot Shader Debugger
-Adapted from villain749 on reddit:
-
-https://www.reddit.com/r/GraphicsProgramming/comments/12m1d36/comment/jg939n4
 
 Allows for basic data debugging from native gdscript code.
 
@@ -19,6 +16,9 @@ Edit position and size in shader uniform controls in editor
 
 Easy to add to existing code
 
+Adapted from villain749 on reddit:
+
+https://www.reddit.com/r/GraphicsProgramming/comments/12m1d36/comment/jg939n4
 
 ### To Use:
 - Copy the code in to your script
@@ -35,3 +35,4 @@ dbgFloat(dbg, value);
 
 debug_finish(color, dbg);
 - Pass your color to the finisher before applying
+
