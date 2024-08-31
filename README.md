@@ -1,15 +1,24 @@
 ## Godot Shader Debugger
 Adapted from villain749 on reddit:
+
 https://www.reddit.com/r/GraphicsProgramming/comments/12m1d36/comment/jg939n4
 
 Allows for basic data debugging from native gdscript code.
+
 Works with Canvas, Spatial, and Sky shaders
+
 Displays values for floats, vectors and matricies
+
 Values limited to -99.999 to 99.999
+
 Float values are a little rough, use the Fix Floats toggle for integers
+
 Obviously only works for per-frame rendered values, not per-pixel
+
 Edit position and size in shader uniform controls in editor
+
 Easy to add to existing code
+
 
 ### To Use:
 - Copy the code in to your script
@@ -28,5 +37,6 @@ debug_finish(color, dbg);
 - Pass your color to the finisher before applying
 
 
-![DebugScreen1](DebugScreen1.png)
-![DebugScreen2](DebugScreen2.gif)
+### Screenshots
+![DebugScreen2](DebugScreen2.png)
+![DebugScreen1](DebugScreen1.gif)
